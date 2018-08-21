@@ -18,16 +18,17 @@
 <link href="css/high-resolution.css" rel="stylesheet" type="text/css" media="all">-->
 
 <!-- jQuery library (served from Google) -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
 <!-- bxSlider Javascript file -->
 <script src="js/jquery.bxslider.min.js"></script>
 <script src="js/script.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- bxSlider CSS file -->
 <link href="css/jquery.bxslider.css" rel="stylesheet" />
 <!-- Responsive -->
 <link href="css/responsive.css" rel="stylesheet" />
-<script src="js/validation.js" type="text/javascript"></script>
+<script src="js/validation_using_jquery.js" type="text/javascript"></script>
 
 
 </head>
@@ -124,44 +125,44 @@
 					<li class="fileds">
 						<div class="name_fileds">
 							<label>First Name</label>
-							<input name="firstname" type="text" /> 
+							<input name="firstname" type="text" id="firstname"/> 
 						</div>
 						<div class="name_fileds">
 							<label>Last Name</label>
-							<input name="lastname" type="text" /> 
+							<input name="lastname" type="text" id="lastname"/> 
 						</div>
 					</li>
 					<li class="fileds">
 						<div class="phone_fileds">
 							<label>Phone No</label>
-							<input name="phone" type="text" /> 
+							<input name="phone" type="text" id="phone"/> 
 						</div>
 						<div class="phone_fileds">
 							<label>Office No</label>
-							<input name="office" type="text" /> 
+							<input name="office" type="text" id="office"/> 
 						</div>
 					</li>					
 					<li class="fileds">
 						<div class="email_fileds">
 							<label>Email</label>
-							<input name="email" type="text" /> 
+							<input name="email" type="text" id="email"/> 
 						</div>
 						<div class="pass_fileds">
 							<label>Password</label>
-							<input name="password" type="text" /> 
+							<input name="password" type="text" id="password"/> 
 						</div>
 					</li>
 					<li class="fileds">
 						<div class="pass_fileds">
 							<label>Confirm Password</label>
-							<input name="cpassword" type="text" /> 
+							<input name="cpassword" type="text" id="cpassword"/> 
 						</div>
 							<div class="dob_fileds selectbox">
 								<label>My birthdate is</label>
 
 								<ul>
 									<li>
-										<select name="month" class="select month">
+										<select name="month" class="select month" id="month">
 											<option value="0">Month</option>
 											<option value="jan">Jan</option>
 											<option value="feb">Feb</option>
@@ -178,7 +179,7 @@
 										</select>
 									</li>
 									<li>
-										<select name="day" class="select day">
+										<select name="day" class="select day" id="day">
 											<option value="0">Day</option>
 											<option value="1">01</option>
 											<option value="2">02</option>
@@ -306,7 +307,7 @@
 					<li class="fileds">
 						<div class="age_fileds">
 							<label>Age</label>
-							<input name="age" type="text" readonly="true"/> 
+							<input name="age" type="text" readonly="true" id="age"/> 
 						</div>
 						<div class="gender_fileds">
 							<label>Gender</label>
@@ -320,20 +321,21 @@
 						<div class="interest_fileds">
 						<label>Interest</label>
 							<ul>
-								<li><input type="checkbox" class="checkbox" id="checkbox_sample18" /> <label class="css-label" for="checkbox_sample18">Biking</label></li>
-								<li><input type="checkbox" class="checkbox" id="checkbox_sample19" /> <label class="css-label" for="checkbox_sample19">Reading</label></li>
-								<li><input type="checkbox" class="checkbox" id="checkbox_sample20" /> <label class="css-label" for="checkbox_sample20">Playing</label></li>
+								<li><input type="checkbox" class="checkbox" id="checkbox_sample18" name="check"/> <label class="css-label" for="checkbox_sample18">Biking</label></li>
+								<li><input type="checkbox" class="checkbox" id="checkbox_sample19" name="check" /> <label class="css-label" for="checkbox_sample19">Reading</label></li>
+								<li><input type="checkbox" class="checkbox" id="checkbox_sample20" name="check"/> <label class="css-label" for="checkbox_sample20">Playing</label></li>
 							</ul>
 						</div>
 						<div class="about_you_fileds">
 						<label>About you</label>
-						<textarea name="aboutyou"></textarea>
+						<textarea name="aboutyou" id="aboutyou"></textarea>
+						<span id="s"></span>
 						</div>						
 					</li>
 				</ul>
 				<div class="next_btn_block">
 					<div class="next_btn" >
-						<a href="partners_preference_form.html" onclick="return validateForm();">Proceed to Step 2 <span><img src="images/small_triangle.png" alt="small_triangle"> </span></a>
+						<a href="partners_preference_form.html" onclick="return validateForm();" id="submit">Proceed to Step 2 <span><img src="images/small_triangle.png" alt="small_triangle"> </span></a>
 					</div>
 				</div>
 			</div>
