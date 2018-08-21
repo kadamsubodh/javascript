@@ -10,7 +10,8 @@ function validateForm(){
 	var month=document.forms["frm"]["month"].value;
 	var day=document.forms["frm"]["day"].value;
 	var year=document.forms["frm"]["year"].value;
-	var emailRegex=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+	var genders = document.getElementsByName("radio");
+	var emailRegex=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	if(firstname=="")
 	{
 		alert("Enter Your  First Name");
@@ -86,12 +87,61 @@ function validateForm(){
 		document.frm.year.focus();
 		return false;
 	}
-	else if(month!=0 && day!=0 && year!=0)
+	else if(genders[0].checked==false && genders[1].checked==false )
 	{
+		alert("Select Gender");
+		return false;
+	}
+	else if(document.getElementById("checkbox_sample18").checked==false && 
+	 		document.getElementById("checkbox_sample19").checked==false && 
+			 document.getElementById("checkbox_sample18").checked==false)
+			{
+					alert("Select atleast one interest");
+					document.getElementById("checkbox_sample18").focus();
+					return false;
+
+			}
+			else if(document.frm.aboutyou.value=="")
+			{
+				alert("This field is mandotory!")
+				document.frm.aboutyou.focus();
+				return false;
+			}
+
+};
+window.onload = function () {
+  var selectElement = document.getElementById("year1");
+
+if (selectElement) {
+    selectElement.addEventListener('change', calculateAge);
+}
+function calculateAge(){
+	 var month=document.forms["frm"]["month"].value;
+		var day=document.forms["frm"]["day"].value;
+		var year=document.forms["frm"]["year"].value;
+	 if(month!=0 && day!=0 && year!=0)
+	{
+		
 		var d=new Date();
-		var y=d.getFullYear();
-		var ageyear=y-year;
-		var m=d.
+		var currentYear=d.getFullYear();
+		var ageyear=currentYear-year;
+		var currentMonth=d.getMonth()+1;
+		var months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+		var m=months.indexOf(month.toUpperCase())+1;
+		var agemonth;
+		if(m > currentMonth)
+		{
+			agemonth+currentMonth;
+
+		}
+		else{
+			agemonth=currentMonth-m;
+
+		}
+		var age=ageyear.toString()+"."+agemonth.toString();
+		document.frm.age.value=age;
 
 	}
+
+}
 };
