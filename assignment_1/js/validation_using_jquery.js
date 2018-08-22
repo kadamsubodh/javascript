@@ -128,7 +128,7 @@ else if($("input[name=check]:checked").length==0)
 });
 
 $(document).ready(function(){
-$(year1).change(function(){
+$("#year1").change(function(){
 		var month=$("#month").val();
 		var day=$("#day").val();
 		var year=$("#year1").val();
